@@ -22,6 +22,7 @@ const router = createBrowserRouter([
     // ใส่เป็น array
     children: [
       {
+        // เหมือนจะมี / ให้เลย  เพราะ parent มีให้
         path: "",
         element: <HomePage />, // จะเป็น outlet
       },

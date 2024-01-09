@@ -11,6 +11,7 @@ import {
   Switch,
 } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled(Box)(({ theme }) => ({
   //   backgroundColor: "red",
@@ -31,16 +32,19 @@ function SideBar() {
       <Box sx={{ position: "fixed" }}>
         <nav>
           <List>
-            {/* home */}
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {/* icon home */}
-                  <Home />
-                </ListItemIcon>
-                <ListItemText primary="Home Page"></ListItemText>
-              </ListItemButton>
-            </ListItem>
+            {/* Link กดแล้วไปเลย */}
+            <Link to="/">
+              {/* home */}
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {/* icon home */}
+                    <Home />
+                  </ListItemIcon>
+                  <ListItemText primary="Home Page"></ListItemText>
+                </ListItemButton>
+              </ListItem>
+            </Link>
 
             {/* shop */}
             <ListItem disablePadding>
@@ -53,16 +57,19 @@ function SideBar() {
               </ListItemButton>
             </ListItem>
 
-            {/* friend */}
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {/* icon people */}
-                  <People />
-                </ListItemIcon>
-                <ListItemText primary="Friend"></ListItemText>
-              </ListItemButton>
-            </ListItem>
+            {/* กดแล้วไปเลย */}
+            <Link to="/friend">
+              {/* friend */}
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {/* icon people */}
+                    <People />
+                  </ListItemIcon>
+                  <ListItemText primary="Friend"></ListItemText>
+                </ListItemButton>
+              </ListItem>
+            </Link>
 
             {/* mode */}
             <ListItem disablePadding>

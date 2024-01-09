@@ -9,7 +9,7 @@ function HomePage() {
   //   const navigator = useNavigate();
   return (
     <Box>
-      <NavBar />
+      {/* <NavBar /> */}
       {/* Stack เหมือน flex */}
       <Stack direction="row" gap={2}>
         <SideBar />

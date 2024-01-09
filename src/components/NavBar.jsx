@@ -28,13 +28,13 @@ function NavBar() {
           </Typography>
 
           <Stack direction="row" gap={2}>
-            <IconButton>
+            <IconButton sx={{ display: { xs: "none", md: "block" } }}>
               <Badge badgeContent={5} color="error">
                 <Mail />
               </Badge>
             </IconButton>
 
-            <IconButton>
+            <IconButton sx={{ display: { xs: "none", md: "block" } }}>
               <Badge badgeContent={10} color="error">
                 <NotificationsActive />
               </Badge>

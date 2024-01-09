@@ -1,4 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import HomePage from "../pages/HomePage";
+import LoginPage from "../pages/LoginPage";
+import ProfilePage from "../pages/ProfilePage";
+import FreindPage from "../pages/FreindPage";
 
 // createBrowserRouter เอาไว้สร้าง rout ต่างๆให้ App รับ input เป็น array ของ router Obj
 // router obj => {path: str, component: react component}
@@ -6,15 +10,15 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <h1>Login</h1>,
+    element: <LoginPage />,
   },
   {
     path: "/",
-    element: <h1>HomePage</h1>,
+    element: <HomePage />,
   },
   {
     path: "/profile",
-    element: <h1>ProfilePage</h1>,
+    element: <ProfilePage />,
   },
   {
     // ใส่ id(ลำดับได้)

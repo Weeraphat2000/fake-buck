@@ -12,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // custom component emotion
 const AppBarContent = styled(Box)`
@@ -27,6 +28,13 @@ const CustomIcon = styled(IconButton)(({ theme }) => ({
 }));
 
 function NavBar() {
+  //
+  //
+  //   ใช้ navigate เพื่อย้าย path แล้วแต่ละ path จะเรียกใช้แต่ละ page เอง
+  const navigate = useNavigate();
+  //
+  //
+
   const [anc, setAnc] = useState(null);
   const openMenu = (event) => {
     // set ตัวที่เป็น anc
@@ -93,9 +101,14 @@ function NavBar() {
             horizontal: "left",
           }}
         >
-          <MenuItem>Profile</MenuItem>
+          {/*  */}
+          {/*  */}
+          {/* ใช้  navigate */}
+          <MenuItem onClick={() => navigate("./profile")}>Profile</MenuItem>
           <MenuItem>My account</MenuItem>
-          <MenuItem>Logout</MenuItem>
+          <MenuItem onClick={() => navigate("/login")}>Logout</MenuItem>
+          {/*  */}
+          {/*  */}
         </Menu>
       </AppBarContent>
     </AppBar>

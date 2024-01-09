@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Home, People, Store } from "@mui/icons-material";
+import { Home, ModeNight, People, Store } from "@mui/icons-material";
 
 import {
   Box,
@@ -8,6 +8,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Switch,
 } from "@mui/material";
 import React from "react";
 
@@ -29,7 +30,7 @@ function SideBar() {
       <nav>
         <List>
           {/* home */}
-          <ListItem disabledPadding>
+          <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 {/* icon home */}
@@ -40,7 +41,7 @@ function SideBar() {
           </ListItem>
 
           {/* shop */}
-          <ListItem disabledPadding>
+          <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 {/* icon shop */}
@@ -49,15 +50,26 @@ function SideBar() {
               <ListItemText primary="Shop"></ListItemText>
             </ListItemButton>
           </ListItem>
-          {/* friend */}
 
-          <ListItem disabledPadding>
+          {/* friend */}
+          <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 {/* icon people */}
                 <People />
               </ListItemIcon>
               <ListItemText primary="Friend"></ListItemText>
+            </ListItemButton>
+          </ListItem>
+
+          {/* mode */}
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {/* icon  */}
+                <ModeNight />
+              </ListItemIcon>
+              <Switch />
             </ListItemButton>
           </ListItem>
         </List>

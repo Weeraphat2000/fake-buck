@@ -1,7 +1,8 @@
+import { Box } from "@mui/material";
 import React from "react";
 
 function Feed() {
-  return <div>Feed</div>;
+  return <Box sx={{ bgcolor: "green", flex: 2 }}>Feed</Box>;
 }
 
 export default Feed;

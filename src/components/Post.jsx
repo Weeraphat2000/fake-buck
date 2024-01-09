@@ -1,10 +1,4 @@
-import {
-  //   CheckBox,
-  Favorite,
-  FavoriteBorder,
-  MoreVert,
-  Share,
-} from "@mui/icons-material";
+import { Favorite, FavoriteBorder, MoreVert, Share } from "@mui/icons-material";
 import {
   Avatar,
   Card,
@@ -51,6 +45,8 @@ function Post() {
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <Checkbox
+            // checked={true}
+            // onClick={}
             icon={<FavoriteBorder />}
             checkedIcon={<Favorite sx={{ color: "red" }} />}
           />

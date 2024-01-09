@@ -27,53 +27,56 @@ function SideBar() {
     //   SideBar
     // </Box>
     <Wrapper>
-      <nav>
-        <List>
-          {/* home */}
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {/* icon home */}
-                <Home />
-              </ListItemIcon>
-              <ListItemText primary="Home Page"></ListItemText>
-            </ListItemButton>
-          </ListItem>
+      {/* อาจจะต้องมี relative ให้มันก่อน(position) */}
+      <Box sx={{ position: "fixed" }}>
+        <nav>
+          <List>
+            {/* home */}
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  {/* icon home */}
+                  <Home />
+                </ListItemIcon>
+                <ListItemText primary="Home Page"></ListItemText>
+              </ListItemButton>
+            </ListItem>
 
-          {/* shop */}
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {/* icon shop */}
-                <Store />
-              </ListItemIcon>
-              <ListItemText primary="Shop"></ListItemText>
-            </ListItemButton>
-          </ListItem>
+            {/* shop */}
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  {/* icon shop */}
+                  <Store />
+                </ListItemIcon>
+                <ListItemText primary="Shop"></ListItemText>
+              </ListItemButton>
+            </ListItem>
 
-          {/* friend */}
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {/* icon people */}
-                <People />
-              </ListItemIcon>
-              <ListItemText primary="Friend"></ListItemText>
-            </ListItemButton>
-          </ListItem>
+            {/* friend */}
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  {/* icon people */}
+                  <People />
+                </ListItemIcon>
+                <ListItemText primary="Friend"></ListItemText>
+              </ListItemButton>
+            </ListItem>
 
-          {/* mode */}
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {/* icon  */}
-                <ModeNight />
-              </ListItemIcon>
-              <Switch />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
+            {/* mode */}
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  {/* icon  */}
+                  <ModeNight />
+                </ListItemIcon>
+                <Switch />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </nav>
+      </Box>
     </Wrapper>
   );
 }

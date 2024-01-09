@@ -3,16 +3,17 @@ import { Box, Button, Modal, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 const ModalContent = styled(Box)(({ theme }) => ({
+  //   //   border: "2px solid #000",
+
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 600,
-  height: 500,
-  backgoundColor: "white",
-  //   border: "2px solid #000",
+  height: 400,
+  background: "white",
   boxShadow: 24,
-  p: 4,
+  padding: "20px",
   textAlign: "center",
   borderRadius: "10px",
   display: "flex",
@@ -35,6 +36,7 @@ function CreactPost() {
     setOpen(true);
   };
 
+  //   ไม่ต้องใช้ style ก็ได้ ไปทำที่ styled สร้าง tag แล้วใส่ style
   const style = {
     position: "absolute",
     top: "50%",
@@ -56,10 +58,8 @@ function CreactPost() {
         open={open}
         // onClick
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
       >
-        <ModalContent sx={style}>
+        <ModalContent>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Text in a modal
           </Typography>

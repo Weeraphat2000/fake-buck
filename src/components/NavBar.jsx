@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { Mail, NotificationsActive } from "@mui/icons-material";
 import {
   AppBar,
@@ -10,11 +11,24 @@ import {
 } from "@mui/material";
 import React from "react";
 
+// custom component emotion
+const AppBarContent = styled(Box)`
+  display: flex;
+  padding: 4px 16px;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const MyCustomIcon = styled(IconButton)(({ theme }) => ({
+  display: "none",
+  [theme.breakpoints.up("md")]: { display: "block" },
+}));
+
 function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Box
+        <AppBarContent
           sx={{
             display: "flex",
             justifyContent: "space-between",
@@ -47,7 +61,7 @@ function NavBar() {
               />
             </IconButton>
           </Stack>
-        </Box>
+        </AppBarContent>
       </AppBar>
     </Box>
   );

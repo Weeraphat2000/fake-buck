@@ -1,9 +1,16 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import ProfilePage from "../pages/ProfilePage";
 import FreindPage from "../pages/FreindPage";
 import AppLaout from "../layout/AppLaout";
+import FriendProfileWithId from "../pages/FriendProfileWithId";
+import ProtexRoute from "./ProtexRoute";
+import RedirecRout from "./RedirecRout";
 
 // createBrowserRouter เอาไว้สร้าง rout ต่างๆให้ App รับ input เป็น array ของ router Obj
 // router obj => {path: str, component: react component}
@@ -18,8 +25,16 @@ const router = createBrowserRouter([
   //
   {
     path: "/",
-    element: <AppLaout />,
-    // ใส่เป็น array
+    element: (
+      // เอามา ครอบ
+      <RedirecRout>
+        {/* เอามาครอบ */}
+        <ProtexRoute>
+          <AppLaout />
+        </ProtexRoute>
+      </RedirecRout>
+    ),
+    // ใส่เป็น array   (nested route) ของ AppLaout
     children: [
       {
         // เหมือนจะมี / ให้เลย  เพราะ parent มีให้
@@ -40,13 +55,15 @@ const router = createBrowserRouter([
   //
   //
   {
-    // ใส่ id(ลำดับได้)
+    // ใส่ id(ลำดับได้)  dynamic path parameter
+    // หลัง : จะเป็นชื่อ key ของ obj ที่ return มาจาก useParams()
     path: "/friend/:friendId",
-    element: <h1>FrindPage width ID</h1>,
+    element: <FriendProfileWithId />,
   },
   {
     path: "*",
-    element: <h1>page not found</h1>,
+    // ถ้า path ไม่ตรงจะไปหน้า login
+    element: <Navigate to="/login" />,
   },
 ]);
 
@@ -54,3 +71,18 @@ const router = createBrowserRouter([
 export default function Router() {
   return <RouterProvider router={router} />;
 }
+
+/*
+*** Component 
+<Link to = '/' />
+<Navigate to = '/' />
+<Outlet/>
+
+*** Hook
+useNavigate() => navigate('/')
+useParams() => pathParamObj()
+
+*** Setup
+  Fn : creeeateBrowserRouter(Arr<RouterObj>)
+  Component : <RouterProviger route={route}/>
+*/

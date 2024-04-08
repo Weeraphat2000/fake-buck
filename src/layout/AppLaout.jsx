@@ -8,6 +8,7 @@ function AppLaout() {
   return (
     <Box>
       <NavBar />
+
       {/* outlet เป็น UI ของ childern route (nested route)    path ต่างๆที่อยู่ children  */}
       <Outlet />
     </Box>

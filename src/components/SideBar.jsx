@@ -57,8 +57,11 @@ function SideBar() {
               </ListItemButton>
             </ListItem>
 
-            {/* กดแล้วไปเลย */}
-            <Link to="/friend">
+            {/*
+             */}
+            {/*  */}
+            {/* กดแล้วไปเลย     ใน router set dynamic path เอาไว้  และใช้ useParams มาใช้ด้วย */}
+            <Link to="/friend/79">
               {/* friend */}
               <ListItem disablePadding>
                 <ListItemButton>
